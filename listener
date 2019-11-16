@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function reset_color_if_not_VIM {
+	#autocmd events in ~/.vimrc will handle case where window is VIM
+	node_id=$(echo $1 | grep -oE '[^ ]+$')
+	node_name=$(xtitle $node_id)
+	if [[ $node_name != *"VIM"* ]]; then
+		$HOME/.vim/bspwm_border_color/reset
+	fi
+}
+
+bspc subscribe node_focus | while read -r line; do reset_color_if_not_VIM "$line"; done

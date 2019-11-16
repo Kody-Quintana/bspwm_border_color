@@ -1,0 +1,4 @@
+#!/bin/bash
+
+bspc config focused_border_color "#fcfcfc"
+bspc config borderless_monocle "true"
