@@ -4,7 +4,7 @@ Some bash scripts to facilitate showing what mode VIM is in by changing bspwm's 
 ## installation
 
  - Clone this repo inside `~/.vim`
- - Add `$HOME/.vim/bspwm_vim_border/listener` to your bspwmrc
+ - Add `$HOME/.vim/bspwm_border_color/listener` to your bspwmrc
  - Add the following to your vimrc:
 ```
 "bspwm color border:
