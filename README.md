@@ -6,7 +6,7 @@ Some bash scripts to facilitate showing what mode VIM is in by changing bspwm's 
  - Clone this repo inside `~/.vim`
  - Add `$HOME/.vim/bspwm_border_color/listener` to your bspwmrc
  - Add the following to your vimrc:
-```
+```Vim script
 "bspwm color border:
 if $DISPLAY != ""
 	autocmd FocusGained * :silent execute "!$HOME/.vim/bspwm_border_color/set " . shellescape(mode())
