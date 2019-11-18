@@ -17,3 +17,12 @@ if $DISPLAY != ""
 endif
 ```
 The listener script runs continuously to reset the border color for other programs that aren't VIM.
+
+## Enabling FocusGained event
+
+Regular vim in a terminal doesn't support the FocusGained event by default.
+To enable it you will need a plugin.
+I personally use [amerlyq/vim-focus-autocmd](https://github.com/amerlyq/vim-focus-autocmd).
+
+## Other Requirements
+- xtitle
