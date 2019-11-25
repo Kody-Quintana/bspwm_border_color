@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#Give vim a chance to close, then if it was last vim open, stop the listener script
+sleep 2
+if ! (ps -e | grep vim > /dev/null); then
+	kill $(ps -ef | grep 'bin/bash.*bspwm_border_listener' | grep -v 'grep' | awk '{print $2}')
+fi
