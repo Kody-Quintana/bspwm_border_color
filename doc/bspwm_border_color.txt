@@ -1,0 +1,20 @@
+*bspwm_border_color.txt*
+.                          .             .                    .          ~
+|-. ,-. ,-. . , , ,-,-.    |-. ,-. ,-. ,-| ,-. ,-.    ,-. ,-. |  ,-. ,-. ~
+| | `-. | | |/|/  | | |    | | | | |   | | |-' |      |   | | |  | | |   ~
+^-' `-' |-' ' '   ' ' '    ^-' `-' '   `-^ `-' '      `-' `-' `' `-' '   ~
+        |                                                                ~
+        '                                                                ~
+ Change the color of bspwm's active border to show what mode VIM is in.
+========================================================================
+*CustomColors*
+
+Because this plugin is primarily implemented with bash scripts, custom colors are defined with
+environment variables instead of vimrc variables. To define a color export the appropriate
+variable with whatever hex color you'd like to use.
+
+    export BSPWM_VIM_INSERT=#ffffff
+
+    export BSPWM_VIM_NORMAL=#ffffff
+
+Default values will be used if you don't define these variables.

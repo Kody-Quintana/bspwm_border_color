@@ -1,28 +1,30 @@
 # bspwm vim mode indicator
-Some bash scripts to facilitate showing what mode VIM is in by changing bspwm's active border color
-![Preview](https://i.imgur.com/Mu0SbTf.gif)
-## installation
+Show what mode vim is in by changing bspwm's active border color
 
- - Clone this repo inside `~/.vim`
- - Add `$HOME/.vim/bspwm_border_color/listener` to your bspwmrc
- - Add the following to your vimrc:
-```Vim script
-"bspwm color border:
-if $DISPLAY != ""
-	autocmd FocusGained * :silent execute "!$HOME/.vim/bspwm_border_color/set " . shellescape(mode())
-	autocmd InsertEnter * :silent execute "!$HOME/.vim/bspwm_border_color/set i"
-	autocmd InsertLeave * :silent execute "!$HOME/.vim/bspwm_border_color/set n"
-	autocmd VimLeave * :silent !$HOME/.vim/bspwm_border_color/reset
-	set title titlestring=VIM "So the listener script can tell its a VIM window
-endif
-```
-The listener script runs continuously to reset the border color for other programs that aren't VIM.
+![Preview](https://i.imgur.com/Mu0SbTf.gif)
+
+## Installation
+Add `Plugin 'Kody-Quintana/bspwm_border_color'` to `~/.vimrc`
+
+and run `:PluginInstall` or appropriate equivalent for your plugin manager.
 
 ## Enabling FocusGained event
 
 Regular vim in a terminal doesn't support the FocusGained event by default.
 To enable it you will need a plugin.
 I personally use [amerlyq/vim-focus-autocmd](https://github.com/amerlyq/vim-focus-autocmd).
+
+## Defining custom colors
+
+Custom colors are defined with environment variables instead of vim variables.
+To define a custom color export the appropriate variable in your `.bashrc`
+with the hex color you want.
+
+Note that the `#` symbol doesn't need to be escaped here.
+```bash
+export BSPWM_VIM_INSERT=#ffffff
+export BSPWM_VIM_NORMAL=#ffffff
+```
 
 ## Other Requirements
 - xtitle
