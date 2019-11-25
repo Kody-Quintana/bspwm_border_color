@@ -5,8 +5,8 @@ function reset_color_if_not_VIM {
 	node_id=$(echo $1 | grep -oE '[^ ]+$')
 	node_name=$(xtitle $node_id)
 	if [[ $node_name != *"VIM"* ]]; then
-		$HOME/.vim/bundle/bspwm_border_color/reset
+		$HOME/.vim/bundle/bspwm_border_color/reset $2
 	fi
 }
 
-bspc subscribe node_focus | while read -r line; do reset_color_if_not_VIM "$line"; done &
+bspc subscribe node_focus | while read -r line; do reset_color_if_not_VIM "$line" $1; done &
