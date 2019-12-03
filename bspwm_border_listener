@@ -4,7 +4,9 @@ function reset_color_if_not_VIM {
 	#autocmd events in plugin/bspwm_border_color.vim will handle case where window is VIM
 	node_id=$(echo $1 | grep -oE '[^ ]+$')
 	node_name=$(xtitle $node_id)
-	if [[ $node_name != *"VIM"* ]]; then
+
+
+	if [[ $node_name != *"ᴠɪᴍ"* ]]; then
 		$HOME/.vim/bundle/bspwm_border_color/reset $2
 	fi
 }
