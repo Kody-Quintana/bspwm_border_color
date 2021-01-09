@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 #Only start listener if it isn't already running
 if ! ps -ef | grep "bin/bash.*bspwm_border_listener" | grep -v "grep" > /dev/null
 then
-	$HOME/.vim/bundle/bspwm_border_color/bspwm_border_listener $1 & disown
+	$SCRIPTPATH/bspwm_border_listener $1 & disown
 fi
