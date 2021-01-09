@@ -3,7 +3,7 @@
 SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 #Only start listener if it isn't already running
-if ! ps -ef | grep "bin/bash.*bspwm_border_listener" | grep -v "grep" > /dev/null
+if ! ps -ef | grep ".*bash.*bspwm_border_listener" | grep -v "grep" > /dev/null
 then
 	$SCRIPTPATH/bspwm_border_listener $1 & disown
 fi
