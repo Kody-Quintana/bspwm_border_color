@@ -9,12 +9,9 @@
 ========================================================================
 *bspwm_border_custom_colors*
 
-Because this plugin is primarily implemented with bash scripts, custom colors are defined with
-environment variables instead of vimrc variables. To define a color export the appropriate
-variable with whatever hex color you'd like to use.
+To use custom colors define the following variables:
 
-    export BSPWM_VIM_INSERT=#ffffff
-
-    export BSPWM_VIM_NORMAL=#ffffff
+    let g:bspwm_border_normal_color = "00FF00"
+    let g:bspwm_border_insert_color = "FF0000"
 
 Default values will be used if you don't define these variables.

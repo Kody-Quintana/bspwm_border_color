@@ -16,27 +16,12 @@ I personally use [amerlyq/vim-focus-autocmd](https://github.com/amerlyq/vim-focu
 
 ## Defining custom colors
 
-Custom colors are defined with environment variables instead of vim variables.
-To define a custom color export the appropriate variable in your `.bashrc`
-with the hex color you want.
-By default red is used for insert, and green for normal.
-
-Note that the `#` symbol doesn't need to be escaped here.
-```bash
-export BSPWM_VIM_INSERT=#ffffff
-export BSPWM_VIM_NORMAL=#ffffff
+Custom colors can be used by defining
+`g:bspwm_border_insert_color` and `g:bspwm_border_normal_color` to a hex color (with no leading #)
+```vimscript
+let g:bspwm_border_normal_color = "00FF00"
+let g:bspwm_border_insert_color = "FF0000"
 ```
-## Compatibility with other bspwm custom colors
-
-The listener script assumes that you are not using any other custom border colors for any other programs.
-It resets the active border to the default for any other window that isn't vim.
-If you are already managing custom colors of other programs you should disable this plugin's listener
-script by adding the following to `~/.vimrc`
-```Vim script
-let g:bspwm_listener = 0
-```
-Alternatively if you already have a heavily customized setup, consider using the [Minimal branch](https://github.com/Kody-Quintana/bspwm_border_color/tree/minimal)
-which only includes the minimum boilerplate to change vim's border color (and is not a plugin).
-
-## Other Requirements
-- xtitle
+## Requirements
+- chwb (from [wmutils](https://github.com/wmutils/core)) - used to set color of window border
+- A terminal that sets the `$WINDOWID` environment variable
