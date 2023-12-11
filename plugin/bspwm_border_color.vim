@@ -62,7 +62,7 @@ endfunction
 
 function s:CheckModeThenSet()
     "Allow time if gaining focus from an exiting vim that is trying to unset this
-    call system("sleep 0.1 && bspc config borderless_monocle false &")
+    "call system("sleep 0.1 && bspc config borderless_monocle false &")
 
     if trim(mode()) == 'i'
         call s:SetInsertColor()
@@ -77,7 +77,5 @@ autocmd InsertLeave * call s:SetNormalColor()
 
 autocmd FocusGained * call s:CheckModeThenSet()
 autocmd VimEnter * call s:CheckModeThenSet()
-"
-"
 "autocmd FocusLost * call system("bspc config borderless_monocle true")
 autocmd VimLeave * call s:RestoreColor()
