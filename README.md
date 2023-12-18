@@ -1,3 +1,5 @@
+December 2023: consider using https://github.com/Kody-Quintana/x11-border-color.nvim instead
+
 # bspwm vim mode indicator
 Vim plugin to show what mode vim is in by changing bspwm's active border color.
 
